@@ -70,7 +70,7 @@ describe 'Admin Invoices Index Page' do
     end
   end
 
-  describe 'User story 9' do
+  describe 'User story 8' do
     it 'displays the total discounted revenue from this invoice' do
       merchant_1 = create(:merchant)
       
