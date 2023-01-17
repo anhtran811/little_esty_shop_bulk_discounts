@@ -128,9 +128,6 @@ RSpec.describe 'invoices show' do
   end
 
   describe 'User story 7' do
-# As a merchant
-# When I visit my merchant invoice show page
-# Next to each invoice item I see a link to the show page for the bulk discount that was applied (if any)
     it 'displays a link to invoice intem with a bulk discount(if any)' do
       merchant_1 = create(:merchant)
       
