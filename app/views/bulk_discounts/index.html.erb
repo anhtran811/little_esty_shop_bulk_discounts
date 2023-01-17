@@ -1,19 +1,27 @@
-<h2>Bulk Discounts</h2>
+ <div class="row">
+  <p class='ml-auto col-sm-5'>Bulk Discounts</p>
+ </div>
 
-<%= link_to 'Create bulk discount', new_merchant_bulk_discount_path(@merchant) %>
+<body>
+  <%= link_to 'Create bulk discount', new_merchant_bulk_discount_path(@merchant) %>
 
-<% @merchant.bulk_discounts.each do |bulk_discount| %>
-  <div id='bulk_discount-<%= bulk_discount.id %>'>
-    <p>Discount: <%= link_to "#{bulk_discount.id}", "/merchant/#{@merchant.id}/bulk_discounts/#{bulk_discount.id}" %>
-    <p>Quantity Threshold: <%= bulk_discount.quantity_threshold %> items<p>
-    <p>Percentage: <%= bulk_discount.percentage %>%<p>
-    <%= link_to "Delete bulk discount #{bulk_discount.id}", "/merchant/#{@merchant.id}/bulk_discounts/#{bulk_discount.id}", method: :delete %>
+  <ul class='ml-auto col-sm-4'>
+    <% @merchant.bulk_discounts.each do |bulk_discount| %>
+      <div id='bulk_discount-<%= bulk_discount.id %>'>
+        <li><p>Discount: <%= link_to "#{bulk_discount.id}", "/merchant/#{@merchant.id}/bulk_discounts/#{bulk_discount.id}" %></li>
+        <p>Quantity Threshold: <%= bulk_discount.quantity_threshold %> items<p>
+        <p>Percentage: <%= bulk_discount.percentage %>%<p>
+        <%= link_to "Delete bulk discount #{bulk_discount.id}", "/merchant/#{@merchant.id}/bulk_discounts/#{bulk_discount.id}", method: :delete %>
+      </div>
+    <% end %>
+  </ul>
+
+  <div class="row">
+    <div id='holidays-'%>
+      <p class='ml-auto col-sm-5'>Upcoming Holidays</p>
+        <% @holidays.each do |holiday| %>
+          <li><%= holiday %></li>
+        <% end %>
+    </div>
   </div>
-<% end %>
-
-<div id='holidays-'%>
-  <h3>Upcoming Holidays:</h3>
-  <% @holidays.each do |holiday| %>
-    <li><%= holiday %></li>
-  <% end %>
-</div>
+</body>
