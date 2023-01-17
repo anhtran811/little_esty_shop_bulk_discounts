@@ -1,4 +1,6 @@
-# <center>Little Esty Shop</center>
+# <center>Little Esty Shop Bulk Discounts</center>
+![eCommerce-Cartoon-1024x576](https://user-images.githubusercontent.com/111314699/213001340-ed6f1e41-d9ca-485d-99eb-74c4c4193c33.png)
+
 
 ## :pencil2:About the Project
 
