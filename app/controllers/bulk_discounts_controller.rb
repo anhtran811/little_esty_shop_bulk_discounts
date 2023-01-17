@@ -16,16 +16,13 @@ class BulkDiscountsController < ApplicationController
   def create
     merchant = Merchant.find(params[:merchant_id])
     bulk_discount = merchant.bulk_discounts.new(bulk_discounts_params)
-    # BulkDiscount.create!(quantity_threshold: params[:quantity_threshold],
-    #                     percentage: params[:percentage],
-    #                     merchant_id: params[:merchant_id])
     if bulk_discount.save(bulk_discounts_params)
       redirect_to merchant_bulk_discounts_path(merchant)
+      flash.notice = 'Your bulk discount has been successfully created.'
     else
       redirect_to new_merchant_bulk_discount_path(merchant)
-      flash[:alert] = 'Please fill in the missing fields.'
+      flash.notice = 'Please fill in the missing fields.'
     end
-
   end
   
   def destroy
@@ -39,12 +36,17 @@ class BulkDiscountsController < ApplicationController
     @merchant = Merchant.find(params[:merchant_id])
     @bulk_discount = BulkDiscount.find(params[:id])
   end
-
+  
   def update
     merchant = Merchant.find(params[:merchant_id])
     bulk_discount = BulkDiscount.find(params[:id])
-    bulk_discount.update(bulk_discounts_params)
-    redirect_to merchant_bulk_discount_path(merchant.id, bulk_discount.id)
+    if bulk_discount.update(bulk_discounts_params)
+      redirect_to merchant_bulk_discount_path(merchant.id, bulk_discount.id)
+      flash.notice = 'Your bulk discount has been updated successfully'
+    else
+      redirect_to edit_merchant_bulk_discount_path(merchant, bulk_discount.id)
+      flash.notice = 'Please fill in all fields with a number.'
+    end
   end
 
   private

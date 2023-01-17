@@ -17,6 +17,7 @@ RSpec.describe "Create new bulk discount" do
       expect(current_path).to eq(merchant_bulk_discounts_path(merchant_1))
       expect(page).to have_content("Quantity Threshold: 20")
       expect(page).to have_content("Percentage: 15")
+      expect(page).to have_content('Your bulk discount has been successfully created.')
     end
 
     it 'can test for sad paths' do
