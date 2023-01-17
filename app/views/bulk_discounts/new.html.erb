@@ -1,3 +1,19 @@
-<h2>Create New Bulk Discount</h2>
+<div class='nav-container'>
+  <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+    <p class='navbar-text'>Bulk Discounts</p>
+    <ul class='nav navbar-nav'>
+      <li><%= link_to 'Dashboard', merchant_bulk_discounts_path(@merchant), style: 'pull-right' %></li>
+    </ul>
+  </nav>
+</div>
 
-<%= render partial: 'form', locals: {path: "/merchant/#{@merchant.id}/bulk_discounts", method: :post, button_text: "Create Bulk Discount", quantity_threshold: '', percentage: ''} %>
+<body>
+  <div class='row'>
+    <p class='col-12'>Create a Bulk Discount</p>
+  </div>
+  <%= render partial: 'form', locals: { path: "/merchant/#{@merchant.id}/bulk_discounts", 
+                                        method: :post, button_text: "Create Bulk Discount", 
+                                        quantity_threshold: '', 
+                                        percentage: ''
+                                        } %>
+</body>
