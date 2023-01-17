@@ -1,14 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Bulk Discount Index Page' do
-# Part 1: As a merchant
-# When I visit my merchant dashboard
-# Then I see a link to view all my discounts
-# When I click this link
-# Then I am taken to my bulk discounts index page
-# Part 2: Where I see all of my bulk discounts including their
-# percentage discount and quantity thresholds
-# And each bulk discount listed includes a link to its show page
   describe 'User story 1 (part 2)' do
     it 'I see all the bulk discounts (as links), with their percentage and quantity thresholds' do
       merchant_1 = create(:merchant)
@@ -26,7 +18,6 @@ RSpec.describe 'Bulk Discount Index Page' do
       items = create_list(:item, 8, unit_price: 10)
 
       visit merchant_bulk_discounts_path(merchant_1)
-      # visit "/merchant/#{merchant_1.id}/bulk_discounts"
 
       expect(page).to have_link("#{bulk_discount_1.id}")
       expect(page).to have_content("Quantity Threshold: #{bulk_discount_1.quantity_threshold}")

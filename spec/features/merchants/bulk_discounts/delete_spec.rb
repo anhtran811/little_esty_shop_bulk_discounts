@@ -2,12 +2,6 @@ require 'rails_helper'
 
 RSpec.describe 'Delete bulk discount' do
   describe 'User story 3' do
-  # As a merchant
-  # When I visit my bulk discounts index
-  # Then next to each bulk discount I see a link to delete it
-  # When I click this link
-  # Then I am redirected back to the bulk discounts index page
-  # And I no longer see the discount listed
     it 'can remove a bulk discount' do  
       merchant_1 = create(:merchant)
 
