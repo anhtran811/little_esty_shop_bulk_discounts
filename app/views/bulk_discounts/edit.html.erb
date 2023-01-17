@@ -11,7 +11,9 @@
   <div class='row'>
     <p class='col-12'>Update Bulk Discount #<%= @bulk_discount.id %></p>
   </div>
-
-<%= render partial: 'form', locals: {path: "/merchant/#{@merchant.id}/bulk_discounts/#{@bulk_discount.id}", method: :patch, button_text: "Update bulk discount", quantity_threshold: "#{@bulk_discount.quantity_threshold}", percentage: "#{@bulk_discount.percentage}"} %>
-
+    <%= render partial: 'form', locals: { path: "/merchant/#{@merchant.id}/bulk_discounts/#{@bulk_discount.id}", 
+                                          method: :patch, 
+                                          button_text: "Update bulk discount", 
+                                          quantity_threshold: "#{@bulk_discount.quantity_threshold}", 
+                                          percentage: "#{@bulk_discount.percentage}"} %>
 </body>
